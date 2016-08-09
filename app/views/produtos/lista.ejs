@@ -1,0 +1,47 @@
+<html>
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:800italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Chewy' rel='stylesheet' type='text/css'>
+    <script>function confirmValidation() {
+            return window.confirm('Tem certeza que deseja excluir esse produto?');
+        }</script>
+</head>
+<body background="http://static.tumblr.com/ibcdiqw/Ie9lvg8i2/15_-_degrad___verde.png">
+<div align="center">
+    <h2 style=" font-family: 'Chewy', cursive; color: #3e8f3e">LISTA DE LIVROS CADASTRADOS</h2>
+</div>
+<div align="center">
+    <tbody>
+    <div>
+        <table border="black" class="table table-bordered"
+               style=" margin:auto; width: 800px; font-family: 'Chewy', cursive;color: #0f0f0f">
+            <tr bgcolor="black" style="font-family: 'Chewy', cursive;color: white">
+
+                <td align="center">ID</td>
+                <td align="center">NOME</td>
+                <td align="center">DESCRIÇÃO</td>
+                <td align="center">PREÇO</td>
+                <td align="center">ACÃO</td>
+            </tr>
+            <% for(var i = 0; i < lista.length; i++) { %>
+            <tr>
+                <td><%= lista[i].id %></td>
+                <td><%= lista[i].nome %></td>
+                <td><%= lista[i].descricao %></td>
+                <td><%= lista[i].preco %></td>
+                <td>
+                    <a class="btn btn-danger" onclick="return confirmValidation()" role="button"
+                       href="/produtos/delete/<%= lista[i].id %>"/>DELETAR<br></a>
+                    <a class="btn btn-warning" role="button" href="/produtos/<%= lista[i].id %>"/>EDITAR</a>
+                </td>
+            </tr>
+            <% } %>
+
+        </table>
+        <a style="font-family:'Chewy'" class="btn btn-success" role="button" href="/produtos/form"/>ADICIONAR <br></a>
+    </div>
+    </tbody>
+</div>
+</body>
+</html>

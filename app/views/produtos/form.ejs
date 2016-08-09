@@ -1,0 +1,48 @@
+<html>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href='https://fonts.googleapis.com/css?family=Raleway:800italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Chewy' rel='stylesheet' type='text/css'>
+<body background="http://static.tumblr.com/ibcdiqw/Ie9lvg8i2/15_-_degrad___verde.png">
+<div class="errors">
+    <% if(errs) { %>
+    <ul>
+        <% for(var i = 0; i < errs.length; i++) { %>
+        <li><%= errs[i].param %> - <%= errs[i].msg %></li>
+        <% } %>
+    </ul>
+    <% } %>
+</div>
+<div align="center">
+    <h2 style="color: #3e8f3e; font-family: 'Chewy', cursive;">CADASTRAR LIVROS NO SISTEMA</h2>
+</div>
+<div align="center">
+<form action="/produtos/:id" method="post" class="form-inline">
+    <input type="hidden" value="<%=produtos.id  %>">
+    <div class="form-group" align="center">
+        <br><br>
+        <label for="nome">Título</label>
+        <br>
+        <input type="text" class="form-control" id="nome" value="<%=produtos.nome%>" name="nome" placeholder="Qual o título do livro?">
+    </div>
+    <br><br>
+    <div class="form-group" align="center">
+
+        <label for="preco">Preço</label>
+        <br>
+        <input type="text" class="form-control" id="preco" name="preco" value="<%=produtos.preco%>"  placeholder="Money, cash, facada">
+    </div>
+    <br><br>
+    <div class="form-group" align="center">
+        <label for="descricao">Descrição</label>
+        <br>
+        <textarea type="text" class="form-control" id="descricao" name="descricao"
+                  placeholder="Como é o livro?"><%=produtos.descricao%></textarea>
+    </div>
+    <br><br>
+    <div align="center">
+        <input type="submit" class="btn btn-success" value="Guardar na Estante :)">
+    </div>
+</form>
+</div>
+</body>
+</html>
