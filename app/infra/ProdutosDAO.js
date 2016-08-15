@@ -9,7 +9,6 @@ ProdutosDAO.prototype
 };
 
 ProdutosDAO.prototype
-
         .salva = function(produtos,callback) {
     this._connection.query('INSERT INTO produtos SET ?', produtos, callback);
 
@@ -23,7 +22,7 @@ ProdutosDAO.prototype
 ProdutosDAO.prototype
 
     .save_update = function(id, produtos, callback) {
-    this._connection.query('UPDATE FROM produtos SET ? WHERE id=?',[id, produtos] , callback);
+    this._connection.query('UPDATE produtos SET ? WHERE id=?',[produtos,id] , callback);
 
 };
 
